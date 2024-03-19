@@ -1,0 +1,23 @@
+def is_leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            return False
+        return True
+    return False
+
+def find_anniversary_year(date):
+    day, month, year = map(int, date.split('/'))
+    
+    if is_leap_year(year):
+        print("Given Anniversary Year: Leap Year.")
+        print("Anniversary Date:", f"{day}/{month}/{year + 1}")
+    else:
+        print("Given Anniversary Year: Non Leap Year.")
+        print("Anniversary Date:", f"{day}/{month}/{year - 1}")
+
+date = "04/11/1947"
+
+print("Enter Date:", date)
+find_anniversary_year(date)
